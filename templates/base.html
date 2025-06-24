@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionnaire de Tâches</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flash-messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <h1>Bienvenue dans ton Gestionnaire de Tâches</h1>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
